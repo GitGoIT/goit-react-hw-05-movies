@@ -1,0 +1,8 @@
+.movieInfo {
+    display: flex;
+    gap: 30px;
+}
+
+.img{
+    width: 250px;
+}
