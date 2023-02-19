@@ -5,7 +5,6 @@ import { UserRoutes } from './UserRoutes';
 export const App = () => {
   return (
     <BrowserRouter
-      basename="/goit-react-hw-05-movies"
       style={{
         height: '100vh',
         display: 'flex',
