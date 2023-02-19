@@ -25,12 +25,12 @@ const MoviesSearchbar = ({ onSubmit }) => {
   const { query } = state;
 
   return (
-    <div className={css.Searchbar}>
-      <form className={css.SearchForm} onSubmit={handleSubmit}>
+    <div className={css.searchbar}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <input
           value={query}
           onChange={handleChange}
-          className={css.SearchForm_input}
+          className={css.input}
           name="query"
           type="text"
           autoComplete="off"
@@ -38,8 +38,8 @@ const MoviesSearchbar = ({ onSubmit }) => {
           placeholder="Type movie title"
           required
         />
-        <button type="submit" className={css.SearchForm_button}>
-          <span className={css.SearchForm_button_label}>Search</span>
+        <button type="submit" className={css.button}>
+          <span className={css.buttonSpan}>Search</span>
         </button>
       </form>
     </div>

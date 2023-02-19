@@ -52,7 +52,7 @@ const Reviews = () => {
             color: 'red',}}
       >Something goes wrong. Please try again later.</p>)}
       
-      {reviews.length > 0 && <ul>{elements}</ul>}
+      {reviews.length > 0 && <ul className={css.list}>{elements}</ul>}
       {reviews.length === 0 && !error && !loading && (
         <p className={css.comment}>We don't have any reviews for this movie</p>
       )}

@@ -1,0 +1,16 @@
+.searchbar {
+    margin-top: 40px;
+    margin-left: 190px;
+}
+
+.input {
+    height: 20px;
+    width: 180px;   
+}
+
+.button {
+    height: 26px;
+    width: 60px;
+    background-color: rgb(240, 248, 255);
+    border: 1px solid grey;
+}

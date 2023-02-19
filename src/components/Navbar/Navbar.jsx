@@ -12,11 +12,11 @@ export const Navbar = () => {
       </li>
     ));
 
-    return (
-        <ul className={css.menu}>
-            {elements}
-        </ul>
-    )
+  return (
+    <div className={css.container}>
+      <ul className={css.menu}>{elements}</ul>
+    </div>
+  );
 }
 
 Navbar.propTypes = {

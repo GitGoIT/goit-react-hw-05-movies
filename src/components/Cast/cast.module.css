@@ -1,0 +1,29 @@
+.list {
+    list-style: none;
+    margin-top: 40px;
+    margin-left: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.item {
+    width: 130px;
+}
+
+.name {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+.character{
+    margin: 0;
+    font-size: 14px;
+}
+
+.comment {
+    margin-top: 40px;
+    margin-left: 180px;
+    color: red;
+}

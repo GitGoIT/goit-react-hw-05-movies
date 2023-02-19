@@ -16,7 +16,7 @@ const Cast = () => {
       try {
         setLoading(true);
         const data = await getMovieCast(Number(id));
-          console.log(data);
+          // console.log(data);
         setActors(data);
       } catch (error) {
         setError(error.massage);
@@ -40,12 +40,12 @@ const Cast = () => {
         height={150}
       />
       <p className={css.name}>{name}</p>
-      <p>Character: {character}</p>
+      <p className={css.character}>Character: {character}</p>
     </li>
   ));
 
   return (
-    <div>
+    <div className={css.container}>
       <>
         <ThreeDots
           height="80"
@@ -56,13 +56,18 @@ const Cast = () => {
           wrapperStyle={{ marginLeft: '45%' }}
           visible={loading && true}
         />
-        {error && (<p
+        {error && (
+          <p
             style={{
               fontSize: '24px',
               textAlign: 'center',
-              color: 'red',}}
-        >Something goes wrong. Please try again later.</p>)}
-        
+              color: 'red',
+            }}
+          >
+            Something goes wrong. Please try again later.
+          </p>
+        )}
+
         {actors.length > 0 && !error && (
           <ul className={css.list}>{elements}</ul>
         )}

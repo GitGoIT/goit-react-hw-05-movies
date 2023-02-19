@@ -22,7 +22,7 @@ const MoviesPage = () => {
       try {
         setLoading(true);
         const data = await getSearchMovies(query);
-        console.log(data);
+        // console.log(data);
         if (data.length === 0) {
           alert('There are no movies matching your request.');
         }
@@ -49,7 +49,7 @@ const MoviesPage = () => {
       setMovies([]);
       setSearchParams({ query });
     },
-    [setSearchParams]
+    [setSearchParams, searchParams]
   );
 
    return (
@@ -64,12 +64,7 @@ const MoviesPage = () => {
          wrapperStyle={{ marginLeft: '45%' }}
          visible={loading && true}
        />
-       {error && (<p
-           style={{
-             fontSize: '24px',
-             textAlign: 'center',
-             color: 'red',
-           }}>Something goes wrong. Please try again later.</p>)}
+       {error && (<p className={css.error}>Something goes wrong. Please try again later.</p>)}
        {movies.length > 0 && <MoviesSearchList movies={movies} />}
      </div>
    );

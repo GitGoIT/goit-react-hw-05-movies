@@ -2,7 +2,7 @@ import css from '../MovieDetailsPage/movieDetailsPage.module.css';
 import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate, Link, Outlet, useLocation} from "react-router-dom";
 import { getMovieDetails } from 'api/fetchApi';
-
+import { NavLink } from 'react-router-dom';
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState([]);
@@ -10,7 +10,6 @@ const MovieDetailsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const  from  = location.state?.from || "/";
-  // console.log({ movie });
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -30,7 +29,7 @@ const MovieDetailsPage = () => {
   return (
     <div>
       <button onClick={goBack}>Go back</button> {}
-      <div className={css.movieInfo}>
+      <div className={css.movieContainer}>
         <img
           className={css.img}
           src={
@@ -40,7 +39,7 @@ const MovieDetailsPage = () => {
           }
           alt={movie.title}
         />
-        <div>
+        <div className={css.movieInfo}>
           <h2>
             {movie.title ? movie.title : 'There is no title yet'}(
             {movie.release_date
@@ -66,19 +65,21 @@ const MovieDetailsPage = () => {
         </div>
       </div>
       <div>
-        <p>Additional information</p>
-        <ul>
-          <li>
-            <Link to={`/movies/${id}/cast`} state={{ from }}>
-              Cast
-            </Link>
-          </li>
-          <li>
-            <Link to={`/movies/${id}/reviews`} state={{ from }}>
-              Reviews
-            </Link>
-          </li>
-        </ul>
+        <div className={css.addInfoContainer}>
+          <p className={css.addInfoTitle}>Additional information</p>
+          <ul className={css.addInfolist}>
+            <li>
+              <NavLink to={`/movies/${id}/cast`} state={{ from }} className={css.addInfolink}>
+                Cast
+              </NavLink>
+            </li>
+            <li className={css.addInfolink}>
+              <NavLink to={`/movies/${id}/reviews`} state={{ from }} className={css.addInfolink}>
+                Reviews
+              </NavLink>
+            </li>
+          </ul>
+        </div>
         <Outlet />
       </div>
     </div>
