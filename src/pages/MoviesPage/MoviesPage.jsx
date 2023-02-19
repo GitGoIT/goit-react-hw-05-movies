@@ -1,3 +1,4 @@
+import css from '../MoviesPage/moviesPage.module.css'
 import { useState, useEffect, useCallback } from 'react';
 import MoviesSearchbar from 'components/MoviesSearchbar/MoviesSearchbar';
 import MoviesSearchList from 'components/MoviesSearchList/MoviesSearchList';
@@ -35,13 +36,21 @@ const MoviesPage = () => {
     fetchSearchMovies();
   }, [query]);
 
-  const searchMovies = useCallback(({ query }) => {
-    if (query.trim() === '') {
-      alert('Enter a search term.');
-    }
-    setMovies([]);
-    setSearchParams({ query });
-  }, []);
+  const searchMovies = useCallback(
+    ({ query }) => {
+      if (query.trim() === '') {
+        alert('Enter a search movies');
+        return;
+      }
+      if (query === searchParams.get('query')) {
+        alert('Same request. Enter a new search movies');
+        return;
+      }
+      setMovies([]);
+      setSearchParams({ query });
+    },
+    [setSearchParams]
+  );
 
    return (
      <div>
@@ -55,7 +64,12 @@ const MoviesPage = () => {
          wrapperStyle={{ marginLeft: '45%' }}
          visible={loading && true}
        />
-       {/* {error && <Error />} */}
+       {error && (<p
+           style={{
+             fontSize: '24px',
+             textAlign: 'center',
+             color: 'red',
+           }}>Something goes wrong. Please try again later.</p>)}
        {movies.length > 0 && <MoviesSearchList movies={movies} />}
      </div>
    );

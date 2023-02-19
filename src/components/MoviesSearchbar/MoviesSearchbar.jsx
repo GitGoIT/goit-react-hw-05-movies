@@ -1,6 +1,6 @@
-import { useState, memo } from 'react';
 import css from '../MoviesSearchbar/moviesSearchbar.module.css';
 import PropTypes from 'prop-types';
+import { useState, memo } from 'react';
 
 const initialState = {
   query: '',

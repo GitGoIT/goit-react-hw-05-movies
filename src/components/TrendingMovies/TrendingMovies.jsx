@@ -1,5 +1,7 @@
+import css from '../TrendingMovies/trendingMovies.module.css';
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'api/fetchApi';
+import { ThreeDots } from 'react-loader-spinner';
 import MoviesSearchList from 'components/MoviesSearchList/MoviesSearchList'
 
 export const TrendingMovies = () => {
@@ -23,5 +25,29 @@ export const TrendingMovies = () => {
       fetchTrendingMovies();
     }, []);
 
-    return <MoviesSearchList movies={movies} />;
+  return (
+    <>
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="#FF0000"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{ marginLeft: '45%' }}
+        visible={loading && true}
+      />
+      {error && (
+        <p
+          style={{
+            fontSize: '24px',
+            textAlign: 'center',
+            color: 'red',
+          }}
+        >
+          Something goes wrong. Please try again later.
+        </p>
+      )}
+      <MoviesSearchList movies={movies} />
+    </>
+  );
 };

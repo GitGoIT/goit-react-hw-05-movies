@@ -25,7 +25,7 @@ const MovieDetailsPage = () => {
     fetchMovieDetails();
   }, [id]);
 
-  const goBack = useCallback(() => navigate(from), [navigate]);  // onClick={()=> navigate(-1) alternative goBack()
+  const goBack = useCallback(() => navigate(from), [from, navigate]);  // onClick={()=> navigate(-1) alternative goBack()
 
   return (
     <div>
@@ -86,3 +86,5 @@ const MovieDetailsPage = () => {
 };
 
 export default MovieDetailsPage;
+
+
