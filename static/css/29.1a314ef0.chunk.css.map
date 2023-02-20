@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/29.1a314ef0.chunk.css","mappings":"AAAA,6BAGI,SAAU,CADV,iBAAkB,CADlB,eAGJ","sources":["pages/NotFoundPage/notFoundPage.module.css"],"sourcesContent":[".message {\n    margin-top: 50px;\n    margin-left: 210px;\n    color: red;\n}"],"names":[],"sourceRoot":""}

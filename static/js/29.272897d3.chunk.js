@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_05_movies=self.webpackChunkgoit_react_hw_05_movies||[]).push([[29],{29:function(e,s,n){n.r(s),n.d(s,{default:function(){return a}});var o="notFoundPage_message__sFPaN",t=n(184),a=function(){return(0,t.jsx)("p",{className:o,children:"Not found page. Please click Home or Movies."})}}}]);
+//# sourceMappingURL=29.272897d3.chunk.js.map
