@@ -15,7 +15,6 @@ useEffect(() => {
     try {
       setLoading(true);
       const data = await getTrendingMovies();
-      // console.log(data);
       setMovies(data);
     } catch (error) {
       setError(error.massage);

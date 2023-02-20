@@ -22,7 +22,6 @@ const MoviesPage = () => {
       try {
         setLoading(true);
         const data = await getSearchMovies(query);
-        // console.log(data);
         if (data.length === 0) {
           alert('There are no movies matching your request.');
         }
