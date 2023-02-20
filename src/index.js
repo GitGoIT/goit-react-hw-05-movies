@@ -6,9 +6,11 @@ import css from './index.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/goit-react-hw-05-movies">
+  <React.StrictMode>
+    <BrowserRouter basename="/goit-react-hw-05-movies">
     <div className={css.container}>
       <App />
     </div>
-  </BrowserRouter>
+    </BrowserRouter>
+  </React.StrictMode>
 );

@@ -6,10 +6,10 @@ import { Link, useLocation } from 'react-router-dom';
 const MoviesSearchList = ({ movies }) => {
   const location = useLocation();
 
-  const elements = movies.map(({ id, title }) => (
+  const elements = movies.map(({ id, title, name }) => (
     <li className={css.link} key={id}>
       <Link to={`/movies/${id}`} state={{ from: location }}>
-        {title}
+        {title || name}
       </Link>
     </li>
   ));
@@ -23,7 +23,8 @@ MoviesSearchList.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
+      title: PropTypes.string,
+      name: PropTypes.string,
     })
-  )
-}
+  ),
+};
