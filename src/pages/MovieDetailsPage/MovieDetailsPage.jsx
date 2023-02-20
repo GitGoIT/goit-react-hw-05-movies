@@ -15,7 +15,6 @@ const MovieDetailsPage = () => {
     const fetchMovieDetails = async () => {
       try {
         const data = await getMovieDetails(Number(id));
-        // console.log(data);
         setMovie(data);
       } catch ({ response }) {
         console.log(response.data.status_message);

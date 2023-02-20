@@ -5,7 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 const MoviesSearchList = ({ movies }) => {
   const location = useLocation();
-  // console.log(location);
 
   const elements = movies.map(({ id, title }) => (
     <li className={css.link} key={id}>

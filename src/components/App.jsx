@@ -1,21 +1,11 @@
-import { BrowserRouter } from 'react-router-dom';
 import { Navbar } from './Navbar/Navbar';
 import { UserRoutes } from './UserRoutes';
 
 export const App = () => {
   return (
-    <BrowserRouter
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <div>
       <Navbar />
       <UserRoutes />
-    </BrowserRouter>
+    </div>
   );
 };

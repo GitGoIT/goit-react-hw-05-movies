@@ -21,6 +21,7 @@ export const getMovieDetails = async (id) => {
 export const getSearchMovies = async (search) => {
     const { data } = await instance.get(`search/movie?query=${search}&page=1&include_adult=false`);
     return data.results;
+    
 }
 
 export const getMovieCast = async (id) => {
