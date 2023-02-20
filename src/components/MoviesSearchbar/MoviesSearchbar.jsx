@@ -38,8 +38,7 @@ const MoviesSearchbar = ({ onSubmit }) => {
           placeholder="Type movie title"
           required
         />
-        <button type="submit" className={css.button}>
-          <span className={css.buttonSpan}>Search</span>
+        <button type="submit" className={css.button}>Search
         </button>
       </form>
     </div>

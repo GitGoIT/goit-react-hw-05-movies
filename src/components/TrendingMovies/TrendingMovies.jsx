@@ -37,13 +37,7 @@ export const TrendingMovies = () => {
         visible={loading && true}
       />
       {error && (
-        <p
-          style={{
-            fontSize: '24px',
-            textAlign: 'center',
-            color: 'red',
-          }}
-        >
+        <p className={css.error}>
           Something goes wrong. Please try again later.
         </p>
       )}

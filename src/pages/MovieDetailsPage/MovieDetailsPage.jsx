@@ -1,8 +1,8 @@
 import css from '../MovieDetailsPage/movieDetailsPage.module.css';
 import { useState, useEffect, useCallback } from "react";
-import { useParams, useNavigate, Link, Outlet, useLocation} from "react-router-dom";
+import { useParams, useNavigate, NavLink, Outlet, useLocation, } from 'react-router-dom';
 import { getMovieDetails } from 'api/fetchApi';
-import { NavLink } from 'react-router-dom';
+import { GoChevronLeft } from 'react-icons/go';
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState([]);
@@ -28,7 +28,9 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
-      <button onClick={goBack}>Go back</button> {}
+      <button onClick={goBack} className={css.button}>
+        <GoChevronLeft className={css.buttonIcon} />
+      </button>
       <div className={css.movieContainer}>
         <img
           className={css.img}
@@ -69,12 +71,20 @@ const MovieDetailsPage = () => {
           <p className={css.addInfoTitle}>Additional information</p>
           <ul className={css.addInfolist}>
             <li>
-              <NavLink to={`/movies/${id}/cast`} state={{ from }} className={css.addInfolink}>
+              <NavLink
+                to={`/movies/${id}/cast`}
+                state={{ from }}
+                className={css.addInfolink}
+              >
                 Cast
               </NavLink>
             </li>
             <li className={css.addInfolink}>
-              <NavLink to={`/movies/${id}/reviews`} state={{ from }} className={css.addInfolink}>
+              <NavLink
+                to={`/movies/${id}/reviews`}
+                state={{ from }}
+                className={css.addInfolink}
+              >
                 Reviews
               </NavLink>
             </li>

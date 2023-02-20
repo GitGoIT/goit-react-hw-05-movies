@@ -2,11 +2,12 @@
     display: flex;
     gap: 30px;
     margin-left: 180px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .img{
     width: 250px; 
+    height: 375px;
 }
 
 .movieInfo {
@@ -18,7 +19,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-left: 100px;
     margin-top: 40px;
-    padding: 15px;
+    padding: 20px;
 }
 
 .addInfoTitle {
@@ -28,9 +29,9 @@
 
 .addInfolist {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     list-style: none;
-    margin-left: 80px;
+    margin-left: 70px;
     margin-bottom: 0;  
 }
 
@@ -48,3 +49,22 @@
 .addInfolink:global(.active) {  
     color: red;
 }
+
+.button {
+    position: absolute;
+    background-color: white;
+    border: none;
+    margin-left: 40px;
+    margin-top: -32px;
+}
+
+.buttonIcon{
+    width: 80px;
+    height: 120px;
+    cursor: pointer;  
+    fill: rgb(240, 248, 255);
+}
+
+.buttonIcon:hover{
+    fill:red;
+        }
